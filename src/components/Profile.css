@@ -1,0 +1,13 @@
+.profile-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+@media print {
+  .profile-text {
+    font-size: 10pt;
+    color: #333;
+  }
+}

@@ -1,0 +1,307 @@
+/* ============================================
+   FLOATING FOOTER — CRITICAL COMPONENT
+   position: fixed — stays visible while scrolling
+   ============================================ */
+
+.floating-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-footer);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+/* ============================================
+   DESKTOP NAV
+   ============================================ */
+
+.footer-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-nav-list {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-btn {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.footer-nav-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.footer-nav-btn--active {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.footer-nav-btn--active:hover {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+}
+
+/* ============================================
+   FOOTER ACTIONS
+   ============================================ */
+
+.footer-actions {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.footer-action-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.footer-action-btn:hover {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.footer-action-btn--print {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.footer-action-btn--print:hover {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+}
+
+/* ============================================
+   FOOTER INFO (name, contact, copyright)
+   ============================================ */
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--border-color);
+  padding-top: 6px;
+}
+
+.footer-sep {
+  color: var(--border-color);
+}
+
+/* ============================================
+   MOBILE NAV
+   ============================================ */
+
+.footer-nav-mobile {
+  display: none;
+}
+
+.footer-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 4px 0;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 18px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.hamburger--open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 4px);
+}
+.hamburger--open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger--open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -4px);
+}
+
+.footer-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-mobile-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-mobile-btn {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 6px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.footer-mobile-btn:hover,
+.footer-mobile-btn--active {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.footer-mobile-actions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.footer-mobile-action-btn {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex: 1;
+  min-width: 70px;
+  text-align: center;
+}
+
+.footer-mobile-action-btn:hover {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 860px) {
+  .footer-nav-desktop {
+    display: none;
+  }
+  .footer-nav-mobile {
+    display: block;
+  }
+  .floating-footer {
+    width: calc(100vw - 32px);
+    max-width: 400px;
+    bottom: 12px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-footer {
+    width: calc(100vw - 16px);
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .footer-mobile-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   PRINT — HIDE FOOTER
+   ============================================ */
+
+@media print {
+  .floating-footer {
+    display: none !important;
+  }
+}

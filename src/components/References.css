@@ -1,0 +1,78 @@
+/* ============================================
+   REFERENCES
+   ============================================ */
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.reference-card {
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  background: var(--bg-card);
+}
+
+.reference-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.reference-title {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.reference-institution {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.reference-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reference-email {
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.reference-email:hover {
+  color: var(--text-primary);
+}
+
+.reference-phone {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .reference-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  .reference-name {
+    font-size: 10pt;
+  }
+  .reference-title,
+  .reference-institution,
+  .reference-email,
+  .reference-phone {
+    font-size: 8pt;
+  }
+}

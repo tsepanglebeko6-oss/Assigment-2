@@ -1,0 +1,111 @@
+/* ============================================
+   PROJECTS
+   ============================================ */
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  break-inside: avoid;
+}
+
+.project-card:hover {
+  border-color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+}
+
+.project-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.project-tech-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-card:hover .project-tech-tag {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.project-features {
+  padding-left: var(--space-md);
+}
+
+.project-feature {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-left: var(--space-sm);
+  margin-bottom: 2px;
+}
+
+.project-feature::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-tertiary);
+}
+
+@media print {
+  .project-card {
+    padding: 8px 10px;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .project-name {
+    font-size: 10pt;
+  }
+  .project-description,
+  .project-feature {
+    font-size: 8pt;
+  }
+  .project-tech-tag {
+    font-size: 7pt;
+    border-color: #ccc;
+  }
+  .project-card:hover {
+    border-color: #ccc;
+  }
+  .project-card:hover .project-tech-tag {
+    border-color: #ccc;
+    color: #555;
+  }
+}
